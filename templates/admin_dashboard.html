@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    Admin Dashboard
+</h2>
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="card dashboard-card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>{{ total_books }}</h3>
+
+                <p>Total Books</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card dashboard-card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>{{ total_users }}</h3>
+
+                <p>Total Users</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card dashboard-card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>{{ issued_books }}</h3>
+
+                <p>Issued Books</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="mt-4">
+
+    <a href="{{ url_for('add_book') }}"
+       class="btn btn-success">
+
+       Add Book
+
+    </a>
+
+    <a href="{{ url_for('books') }}"
+       class="btn btn-primary">
+
+       Manage Books
+
+    </a>
+
+    <a href="{{ url_for('users') }}"
+       class="btn btn-warning">
+
+       Manage Users
+
+    </a>
+
+</div>
+
+{% endblock %}
