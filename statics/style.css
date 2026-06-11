@@ -1,98 +1,204 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
 body {
     background: linear-gradient(135deg, #eef2ff, #f8fafc);
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
 }
 
-/* Navbar */
+/* =========================
+   NAVBAR
+========================= */
+
 .custom-navbar {
-    background: linear-gradient(90deg, #4f46e5, #7c3aed);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    background: linear-gradient(90deg, #4f46e5, #7c3aed) !important;
+    padding: 12px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
+    color: #ffffff !important;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
-.nav-link {
-    font-weight: 500;
-}
-
-.nav-link:hover {
+.navbar-brand:hover {
     color: #ffd166 !important;
 }
 
-/* Hero Section */
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 600;
+    margin-left: 10px;
+    padding: 8px 14px !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #ffd166 !important;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero-section {
-    margin-top: 80px;
+    margin-top: 50px;
     padding: 60px 30px;
-    background: white;
+    background: #ffffff;
     border-radius: 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .hero-section h1 {
     color: #4f46e5;
+    font-weight: 700;
 }
 
 .hero-section p {
-    color: #555;
+    color: #6c757d;
+    font-size: 1.1rem;
 }
 
-/* Cards */
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
 .card {
     border: none;
     border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .card-header {
     border-radius: 18px 18px 0 0 !important;
+    font-weight: 600;
 }
 
 .dashboard-card {
-    transition: 0.3s;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 .dashboard-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Buttons */
+/* =========================
+   BUTTONS
+========================= */
+
 .btn {
     border-radius: 10px;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    transform: scale(1.03);
+    transform: translateY(-2px);
 }
 
-/* Tables */
+/* =========================
+   TABLES
+========================= */
+
 .table {
-    background: white;
+    background: #ffffff;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.table th {
-    vertical-align: middle;
+.table thead {
+    background-color: #4f46e5;
+    color: white;
 }
 
+.table th,
 .table td {
     vertical-align: middle;
+    padding: 14px;
 }
 
-/* Forms */
-.form-control {
+.table tbody tr:hover {
+    background-color: #f8f9ff;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-control,
+.form-select {
     border-radius: 10px;
+    padding: 10px 14px;
 }
 
-.form-control:focus {
-    box-shadow: 0 0 0 0.2rem rgba(79,70,229,0.25);
+.form-control:focus,
+.form-select:focus {
     border-color: #4f46e5;
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
 }
 
-/* Alerts */
+/* =========================
+   ALERTS
+========================= */
+
 .alert {
     border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   LOGIN / REGISTER CARDS
+========================= */
+
+.auth-card {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #6c757d;
+    padding: 20px 0;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 40px 20px;
+    }
+
+    .navbar-nav {
+        margin-top: 15px;
+    }
+
+    .nav-link {
+        margin: 5px 0;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
 }
