@@ -12,7 +12,66 @@ User Dashboard
 
 <hr>
 
+<h4>Available Books</h4>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Available</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for book in books %}
+
+        <tr>
+
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.category }}</td>
+            <td>{{ book.available }}</td>
+
+            <td>
+
+                {% if book.available > 0 %}
+
+                <a href="{{ url_for('issue_book',
+                                    book_id=book.id) }}"
+                   class="btn btn-primary btn-sm">
+
+                    Issue
+
+                </a>
+
+                {% else %}
+
+                <span class="text-danger">
+                    Not Available
+                </span>
+
+                {% endif %}
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+<hr>
+
 <h4>My Issued Books</h4>
+
+{% if my_books %}
 
 <table class="table table-bordered">
 
@@ -55,7 +114,7 @@ User Dashboard
                                 issue_id=issue.id) }}"
                class="btn btn-danger btn-sm">
 
-               Return
+                Return
 
             </a>
 
@@ -70,5 +129,13 @@ User Dashboard
     </tbody>
 
 </table>
+
+{% else %}
+
+<div class="alert alert-info">
+    You have not issued any books yet.
+</div>
+
+{% endif %}
 
 {% endblock %}
